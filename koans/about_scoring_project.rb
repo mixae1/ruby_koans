@@ -34,11 +34,8 @@ def score(dice)
   dice.each do |element|
     digits[element] += 1
   end
-  p digits
   acc = (digits[1]/3)*1000 + (digits[1]%3)*100 + (digits[5]/3)*500 + (digits[5]%3)*50
-  p acc
   digits.each_with_index { |x, ind| acc += (x/3)*ind*100 if ind != 1 and ind != 5 }
-  p acc
   acc
 end
 
